@@ -1,0 +1,88 @@
+{%load static%}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-0 bg-primary bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="{% url 'baseapp:index'%}">
+      <img
+        src="{%static 'img/logo/main.png'%}"
+        height="40"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ms-2">
+          <a class="nav-link" href="{% url 'baseapp:index'%}">Our Union <i class="fa-solid fa-chevron-right"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'baseapp:contact-us'%}">Events <i class="fa-solid fa-chevron-right"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'baseapp:contact-us'%}">Community <i class="fa-solid fa-chevron-right"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'baseapp:contact-us'%}">Contact us <i class="fa-solid fa-chevron-right"></i></a>
+        </li>
+       
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+       {%if request.user.is_authenticated%}
+       <form action="{%url 'baseapp:logout'%}" method="post">
+        {%csrf_token%}
+        <button  data-mdb-ripple-init type="submit" class="btn btn-primary bg-black rounded-0 me-3">
+          Logout
+        </button>
+       </form>
+
+       {%else%}
+       <a href="{%url 'baseapp:login'%}">
+        <button data-mdb-ripple-init type="button" class="btn btn-link text-black px-3 me-2">
+          Login
+        </button>
+      </a>
+      <a href="{%url 'baseapp:signup'%}">
+        <button data-mdb-ripple-init type="button" class="btn btn-primary bg-black py-3 px-4 me-3 rounded-0">
+          Sign Up
+        </button>
+      </a>
+      
+       {%endif%}
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <div class="">
+      <li {% if message.tags %} class="{{ message.tags }} ps-5" {% endif %}> <span class="mx-5">{{ message }}</span></li>
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}

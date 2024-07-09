@@ -1,0 +1,47 @@
+{% extends 'layout.html'%}
+
+{%block meta_tags%}
+<!-- Enter meta tag details here -->
+{%endblock%}
+
+{%block title%}
+Account Sign Up
+{%endblock%}
+
+{%block content%}
+<div class="container-fluid bg-primary" style="min-height: 60vh;">
+
+    <div class="row pt-5">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 p-4" style="background-color: rgb(243, 243, 243);">
+            <p class="h3">Create Account</p>
+            <form action="{%url 'baseapp:signup'%}" method="post">
+                {% csrf_token%}
+                <div class="form-outline  mt-3" data-mdb-input-init>
+                    <input type="email" name="email" id="email" class="form-control form-icon-trailing" />
+                    <label class="form-label" for="email">Email</label>
+                </div>
+    
+                <div class="form-outline  mt-3" data-mdb-input-init>
+                    <input type="password" name="password1" id="password1" class="form-control" aria-describedby="password1" disabled />
+                    <label class="form-label" for="password1">Password</label>
+                </div>
+    
+                <div class="form-outline  mt-3 d-none" id="password2_layout" data-mdb-input-init>
+                    <input type="password" name="password2" id="password2" class="form-control " aria-describedby="password2" disabled />
+                    <label class="form-label" for="password2">Confirm Password</label>
+                </div>
+                <div class="my-2">
+                    <span id="msg" class="form-text"> Must be 8-15 characters long. </span>
+                </div>
+    
+                <button class="btn btn-primary bg-black rounded-0 my-3" id="btn_create_account" disabled>Create Account</button>
+            </form>
+            <small><i>By creating account here, you aggreed to the terms of use and policy of this website.</i></small>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+
+
+</div>
+{%endblock%}

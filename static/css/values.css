@@ -1,0 +1,50 @@
+.vh100{
+    min-height: 100vh;
+}
+.vh90{
+    min-height: 90vh;
+}
+.vh80{
+    min-height: 80vh;
+}
+.vh70{
+    min-height: 70vh;
+}
+.vh60{
+    min-height: 60vh;
+}
+.vh50{
+    min-height: 50vh;
+}
+
+.vh40{
+    min-height: 40vh;
+}
+
+.vh30{
+    min-height: 30vh;
+}
+
+.vh20{
+    min-height: 20vh;
+}
+
+.vh10{
+    min-height: 10vh;
+}
+
+.h200px{
+    min-height: 200px;
+    min-width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.bg-primary{
+    background: linear-gradient(to right , #e8e0d7, #e9e3dc);
+}
+
+
+

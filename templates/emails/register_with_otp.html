@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation Confirmation</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(to right , #011c46, #02316b);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Ruangmei.com</h1>
+        </div>
+        <div class="content">
+            <p>Dear User,</p>
+            <p>Thank you for registering on our website. To complete your account setup, please use the following One-Time Password (OTP) during the registration process:</p>
+            <p style="font-size: 24px; font-weight: bold;">{{otp}}</p>
+            <p>This OTP is valid for a single use and should be entered within the registration process to verify your email address.</p>
+            <p>If you did not request this registration or have any questions, please contact our support team immediately.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Ruangmei.com. All rights reserved.</p>
+            <a href="www.ruangmei.com">www.ruangmei.com</a>
+        </div>
+    </div>
+</body>
+</html>

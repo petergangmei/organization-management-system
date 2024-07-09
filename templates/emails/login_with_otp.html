@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Confirmation</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(to right , #011c46, #02316b);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome Back to Ruangmei.com</h1>
+        </div>
+        <div class="content">
+            <p>Dear User,</p>
+            <p>To login and further enhance the security of your account, here is your One-Time Password (OTP) for this session:</p>
+            <p style="font-size: 24px; font-weight: bold;">{{otp}}</p>
+            <p>Please enter this OTP in the appropriate field to complete your login process.</p>
+            <p>If this login was not initiated by you, please contact our support team immediately.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 2024 Ruangmei.com. All rights reserved.</p>
+            <a href="www.ruangmei.com">www.ruangmei.com</a>
+        </div>
+    </div>
+</body>
+</html>
