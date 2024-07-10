@@ -19,7 +19,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-BASE_URL = 'https://organization-management-system-ten.vercel.app/'
+BASE_URL = 'https://organization-management-system-lemon.vercel.app/'
 
 # Application definition
 
@@ -110,6 +110,14 @@ JWT_SECRET_KEY = config('JWT_SECRET_KEY')
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://ruangmei.com",
+    "https://ruangmei.com/",
+    "http://127.0.0.1:1000",
+    "https://organization-management-system-lemon.vercel.app/",
+]
+
 
 LANGUAGE_CODE = 'en-us'
 USE_TZ = True
