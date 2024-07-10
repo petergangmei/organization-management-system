@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1v7i3x%0fw)&qdo2&s9pcfc-+$op4njzuu)mg^#ta9l*qv2&a+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG= True
+
 ALLOWED_HOSTS = ["*"]
 
 BASE_URL = 'https://organization-management-system-ten.vercel.app/'
