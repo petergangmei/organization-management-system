@@ -1,15 +1,8 @@
 # Welcome & Thank you for checking out!
 
-### Some basic command 
-python manage.py runserver --settings=core.settings.dev                     <br/>
-
-<!-- common commands -->
-python manage.py makemigrations --settings=core.settings.dev                <br/>
-python manage.py migrate --settings=core.settings.dev                       <br/>
-python manage.py createsuperuser --settings=core.settings.dev               <br/>
+Visit demo page: https://organization-management-system-ten.vercel.app/
 
 ## CONFIGURATION (important)    
-
 JWT_SECRET_KEY = "your-secret-key"          <br/><br/>
 
 #Email Config                               <br/>
@@ -27,3 +20,13 @@ AWS_SECRET_ACCESS_KEY = ''                  <br/><br/>
 
 AWS_REGION_NAME = ''                        <br/>
 AWS_STORAGE_BUCKET_NAME = ''                <br/>
+
+
+## Additionals help!
+### Some basic command 
+python manage.py runserver --settings=core.settings.dev                     <br/>
+
+<!-- common commands -->
+python manage.py makemigrations --settings=core.settings.dev                <br/>
+python manage.py migrate --settings=core.settings.dev                       <br/>
+python manage.py createsuperuser --settings=core.settings.dev               <br/>
