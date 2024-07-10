@@ -4,6 +4,7 @@ botocore==1.34.142
 cffi==1.16.0
 cryptography==42.0.8
 Django==5.0.6
+django-cors-headers==4.4.0
 django-storages==1.14.4
 django-thread==0.0.1
 jmespath==1.0.1
