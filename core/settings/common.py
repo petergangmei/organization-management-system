@@ -1,5 +1,4 @@
 
-import os
 from pathlib import Path
 from decouple import config
 
@@ -87,6 +86,7 @@ DATABASES = {
 #     }
 # }
 
+# DATABASES['default'] = dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
