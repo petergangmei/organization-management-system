@@ -14,10 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1v7i3x%0fw)&qdo2&s9pcfc-+$op4njzuu)mg^#ta9l*qv2&a+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG= True
+ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = [".vercel.app"]
-
-BASE_URL = 'mywebsite.com'
+BASE_URL = 'https://organization-management-system-ten.vercel.app/'
 
 # Application definition
 
@@ -76,6 +76,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #     }
 # }
 
+DATABASES = {
+'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / '../db.sqlite3',
+    }
+}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -95,14 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
 JWT_SECRET_KEY = config('JWT_SECRET_KEY')
 
 
-# ---- (Email configuration ) ----
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT')
-EMAIL_USE_SSL = config("EMAIL_USE_SSL")
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 LANGUAGE_CODE = 'en-us'
 USE_TZ = True
@@ -121,3 +120,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ---- (aws - SES setting ) ----
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('AWS_SES_REGION_ENDPOINT')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_SSL = config("EMAIL_USE_SSL")
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+# ---- (aws - s3 bucket setting) ----
+AWS_S3_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_S3_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = config("AWS_REGION_NAME")
+AWS_QUERYSTRING_EXPIRE = 300
+AWS_QUERYSTRING_AUTH = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
