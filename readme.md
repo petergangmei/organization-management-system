@@ -1,6 +1,6 @@
 # Welcome & Thank you for checking out!
 
-Visit demo page: https://organization-management-system-ten.vercel.app/
+Visit demo page: https://organization-management-system-lemon.vercel.app/
 
 ## CONFIGURATION (important)    
 JWT_SECRET_KEY = "your-secret-key"          <br/><br/>
