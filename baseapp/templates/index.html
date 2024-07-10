@@ -9,23 +9,62 @@
 {%endblock%}
 
 {%block content%}
-<!-- http://127.0.0.1:8000/static/img/bg1.jpg -->
-<div class="container-fluid bg-primary vh70">
-    
-    <div class="container">
-        <p class="h1 fw-bold pt-5">Universal Student Union</p>
+<div class="container-fluid d-flex bg-primary vh70">
+    <div class="container m-auto text-center">
+        <p class="fw-bold pt-5" style="font-size: 70px;">Universal Student Union</p>
         <p class="h3 mt-3 text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
         <div class="pt-5 d-flex vh20">
             <button class="btn m-auto bg-black text-white px-4 py-3 rounded-0 custom-btn btn-3">Explore</btn>
         </div>
     </div>
 </div>
-<!-- section2 -->
+<!-- Leadership Section: start -->
  <section class="container-fluid bg-black text-white vh90">
     <div class="container pt-5">
-        <p class="h3">Your Leadership Team</p>
+        <p class="h1 fw-bold text-white">Your Leadership Team</p>
+        <p class="fs-5 tex-white">We've four full-time officers, it's their job to represent you and make sure you have the best time whilst you're at City. <br/> Say hello if you see them on campus.</p>
 
+        <div class="row">
+        {%for lead in leaders%}
+        <div class="col-lg-3 border-1 shadow-3">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="{{lead.img.url}}" class="img-fluid" style="height: 310px; width: 100%;"/>
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </div>
+            <div class="card-body text-center m-3">
+              <h5 class="card-title text-white h4 fw-bold">{{lead.name}}</h5>
+              <p class="card-text text-white">{{lead.designation}}</p>
+            </div>
+          </div>
         
+        {%endfor%}
+        </div>
     </div>
  </section>
+<!-- Leadership Section: ended -->
+
+<!-- News & Update Section: start -->
+<section class="vh80 bg-primary">
+    <div class="container ">
+        <div class="d-flex justify-content-between">
+            <p class="h1 fw-bold text-black py-5">News & Updates</p>
+            <a href="{%url 'event_app:news'%}" class="py-5 h3 text-black fw-bold">View All</a>
+        </div>
+        <div class="row">
+            {%for nws in news%}
+                <div class="col-lg-6">
+                    <a class="text-black" href="{%url 'event_app:news-detail' nws.slug %}">
+                    <p class="h4">{{nws.title}}</p>
+                    </a>
+                    <p>{{nws.content}}</p>
+                </div>
+
+            {%endfor%}
+        </div>
+    </div>
+
+</section>
+<!-- News & Update Section: end -->
+
+
 {%endblock%}

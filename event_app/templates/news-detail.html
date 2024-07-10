@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+
+{%block meta_tags%}
+<!-- Enter meta tag details here -->
+{%endblock%}
+
+{%block title%}
+{{news.title}}
+{%endblock%}
+
+{%block content%}
+<div class="container" style="min-height: 60vh;">
+    
+    <p class="h4 pt-5">{{news.title}}</p>
+
+    <p class="text-secondary">{{news.created_at}}</p>
+
+    {%if news.cover_img%}
+        <img src="{{news.cover_img.url}}">
+    {%endif%}
+
+    <p>{{news.content}}</p>
+   
+</div>
+{%endblock%}

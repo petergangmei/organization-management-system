@@ -1,0 +1,26 @@
+{% extends 'layout.html'%}
+
+{%block meta_tags%}
+<!-- Enter meta tag details here -->
+{%endblock%}
+
+{%block title%}
+News & Update
+{%endblock%}
+
+{%block content%}
+<div class="container" style="min-height: 60vh;">
+    <p class="h1 fw-bold text-black py-5">News & Updates</p>
+    <div class="row pb-5">
+        {%for nws in news%}
+            <div class="col-lg-6">
+                <a class="text-black" href="{%url 'event_app:news-detail' nws.slug %}">
+                <p class="h4">{{nws.title}}</p>
+                </a>
+                <p>{{nws.content}}</p>
+            </div>
+
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}

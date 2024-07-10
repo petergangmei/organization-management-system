@@ -7,13 +7,20 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import  authenticate, login, logout
 from django.utils import timezone
 from django.conf import settings
-from baseapp.models import Otp
 from core.utils.generator import generate_username,generate_token
 from core.utils.mails import construct_password_reset_email
-from event_app.models import VisitorMessage
+from event_app.models import VisitorMessage, NewsModel
+from baseapp.models import Otp, Leadership 
+
 
 def index(request):
-    return render(request, 'index.html')
+    leaders = Leadership.objects.all()
+    news    = NewsModel.objects.filter(public=True)[0:2]
+    context = {
+         'leaders':leaders,
+         'news':news,
+    }
+    return render(request, 'index.html',context)
 
 def signup(request):
     if request.method == "POST":

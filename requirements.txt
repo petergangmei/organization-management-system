@@ -7,6 +7,7 @@ Django==5.0.6
 django-storages==1.14.4
 django-thread==0.0.1
 jmespath==1.0.1
+pillow==10.4.0
 pycparser==2.22
 PyJWT==2.8.0
 python-dateutil==2.9.0.post0
