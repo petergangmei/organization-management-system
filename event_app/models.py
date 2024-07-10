@@ -13,7 +13,7 @@ class VisitorMessage(models.Model):
             return self.email
     
 class NewsModel(models.Model):
-      title             = models.CharField(max_length=100)
+      title             = models.TextField(max_length=250)
       slug              = models.SlugField(unique=True, blank=True,null=True)
       cover_img         = models.ImageField(upload_to="news-cover-image/",blank=True,null=True)           
 

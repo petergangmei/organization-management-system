@@ -30,11 +30,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'baseapp',
     'event_app',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -106,7 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 JWT_SECRET_KEY = config('JWT_SECRET_KEY')
 
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWS_CREDENTIALS = True
 
 LANGUAGE_CODE = 'en-us'
 USE_TZ = True

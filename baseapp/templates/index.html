@@ -56,7 +56,7 @@
                     <a class="text-black" href="{%url 'event_app:news-detail' nws.slug %}">
                     <p class="h4">{{nws.title}}</p>
                     </a>
-                    <p>{{nws.content}}</p>
+                    <p>{{nws.content |truncatechars:250}}</p>
                 </div>
 
             {%endfor%}
